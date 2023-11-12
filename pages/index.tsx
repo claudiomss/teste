@@ -39,6 +39,20 @@ export default function Home() {
   setProducts(prods => [...prods])
 }
 
+const RemoveAllProducts = (id) => {
+  const productList = products.filter(pp => pp.id != id)
+  setProducts(productList)
+  
+}
+
+
+
+function calculateTotalProducts(total, prods) {
+  return total + (prods.amount);
+}
+
+let totalProducts = products.reduce(calculateTotalProducts, 0);
+
 
 if(isLoading){
   return <div>Esta Carregando...</div>
@@ -53,7 +67,7 @@ if(isLoading){
         </Logo>
         <Cart>
         <ShoppingCart size={24} weight="fill" />
-       5
+       {totalProducts}
         </Cart>
        </Top>
        <ContainerMain>
@@ -63,7 +77,7 @@ if(isLoading){
         )
        })}
        </ContainerMain>
-       <CartProduct products={products} handleAddProduct={handleAddProduct} handleSubtractProduct={handleSubtractProduct}/>
+       <CartProduct products={products} handleAddProduct={handleAddProduct} handleSubtractProduct={handleSubtractProduct} RemoveAllProducts={RemoveAllProducts}/>
        <Footer>
         MKS sistemas © Todos os direitos reservados
        </Footer>

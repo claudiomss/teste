@@ -3,7 +3,7 @@ import { BtnCart, Cards, ContainerCart, TextCart, TextCartTotal } from "./styles
 import { X } from 'phosphor-react'
 
 
-export function CartProduct({products, handleAddProduct, handleSubtractProduct}){
+export function CartProduct({products, handleAddProduct, handleSubtractProduct,RemoveAllProducts}){
     
     const handleAdd = (id) => {
         return handleAddProduct(id)
@@ -13,12 +13,16 @@ export function CartProduct({products, handleAddProduct, handleSubtractProduct})
         return handleSubtractProduct(id)
      }
     
-     let total = products.reduce(calculate, 0);
-
-     function calculate(total, prods) {
-       return total + (prods.price * prods.amount);
+     const handleClose = (id) => {
+        return RemoveAllProducts(id)
      }
-
+    
+     
+     function calculateTotalPrice(total, prods) {
+         return total + (prods.price * prods.amount);
+    }
+        
+    let total = products.reduce(calculateTotalPrice, 0);
    
     return(
         <>
@@ -31,7 +35,7 @@ export function CartProduct({products, handleAddProduct, handleSubtractProduct})
             <Cards>
            {products.map((prod) => {
             return(
-                <CardCart key={prod.id} id={prod.id} photo={prod.photo} title={prod.title} amount={prod.amount} price={prod.price} handleAdd={handleAdd} handleSubtract={handleSubtract}/>
+                <CardCart key={prod.id} id={prod.id} photo={prod.photo} title={prod.title} amount={prod.amount} price={prod.price} handleAdd={handleAdd} handleSubtract={handleSubtract} handleClose={handleClose}/>
             )
            })}
            

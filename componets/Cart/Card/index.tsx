@@ -2,7 +2,7 @@
 import { BtnClose, ContainerAmount, ContainerCard } from "./styles";
 import { Minus, Plus, X } from 'phosphor-react'
 
-export function CardCart({id, photo, price,title,amount, handleAdd, handleSubtract}){
+export function CardCart({id, photo, price,title,amount, handleAdd, handleSubtract, handleClose}){
      
    
     const handleAddAmount = () => {
@@ -11,11 +11,15 @@ export function CardCart({id, photo, price,title,amount, handleAdd, handleSubtra
 
     const handleSubtractAmount = () => {
         handleSubtract(id)
-      }
+    }
+
+    const handleCloseBtn = () => {
+        handleClose(id)
+    }
     
     return(
         <>
-        <BtnClose>
+        <BtnClose onClick={handleCloseBtn}>
         <X size={20} color="#ffffff"/>
         </BtnClose>
         <ContainerCard>
