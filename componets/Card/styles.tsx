@@ -2,17 +2,19 @@ import styled from "styled-components";
 
 export const CardProduct = styled.div`
     display: flex;
+
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 25rem;
-    height: 32rem;
+    width: 20rem;
+    height: 30rem;
     background-color: white;
     box-shadow: 1px 1px 5px gray;
     padding: 2rem 1.5rem 0 1.5rem;
     font-size: 1.8rem;
     border-radius: 10px;
     transition: 300ms;
-
+    
     img{
        
     }
@@ -35,11 +37,12 @@ export const CardProduct = styled.div`
         color: #8b8b8b;
         font-size: 1.3rem;
         padding-bottom: 1.5rem;
+        
     }
 
-    &:hover{
-        background-color: #f2faff;
-    }
+ 
+
+    
 `
 
 export const ButtonBuy = styled.button`
@@ -54,6 +57,7 @@ export const ButtonBuy = styled.button`
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     width: calc(100% + 3rem);
+    height: 100%;
 
     text-transform: uppercase;
     color: white;

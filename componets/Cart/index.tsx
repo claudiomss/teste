@@ -2,22 +2,24 @@ import { CardCart } from "./Card";
 import { BtnCart, Cards, ContainerCart, TextCart, TextCartTotal } from "./styles";
 import { X } from 'phosphor-react'
 
-const Produtos = [{
-    photo: "https://www.eclock.com.br/media/wysiwyg/relogio-orient-com-calendario.jpg",
-    title: "Apple Wath Super App",
-    priceTotal: 620,
-    amount: 5
-  },
-  {
-    photo: "https://www.eclock.com.br/media/wysiwyg/relogio-orient-com-calendario.jpg",
-    title: "Apple Wath Super App",
-    priceTotal: 620,
-    amount: 4
-  },
-  
-]
 
-export function CartProduct(){
+export function CartProduct({products, handleAddProduct, handleSubtractProduct}){
+    
+    const handleAdd = (id) => {
+        return handleAddProduct(id)
+     }
+
+     const handleSubtract = (id) => {
+        return handleSubtractProduct(id)
+     }
+    
+     let total = products.reduce(calculate, 0);
+
+     function calculate(total, prods) {
+       return total + (prods.price * prods.amount);
+     }
+
+   
     return(
         <>
         <ContainerCart>
@@ -27,16 +29,16 @@ export function CartProduct(){
                 <X size={40} color="#ffffff"/>
             </TextCart>
             <Cards>
-           {Produtos.map((prod) => {
+           {products.map((prod) => {
             return(
-                <CardCart key={prod.amount} photo={prod.photo} title={prod.title} amount={prod.amount} priceTotal={prod.priceTotal}/>
+                <CardCart key={prod.id} id={prod.id} photo={prod.photo} title={prod.title} amount={prod.amount} price={prod.price} handleAdd={handleAdd} handleSubtract={handleSubtract}/>
             )
            })}
            
             </Cards>
             
             <TextCartTotal>
-                Total:<span>R$600</span>  
+                Total:<span>R${total}</span>  
             </TextCartTotal>
             <BtnCart>
                 Finalizar Compra

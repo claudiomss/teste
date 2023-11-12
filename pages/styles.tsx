@@ -55,7 +55,7 @@ export const ContainerMain = styled.div`
     min-height: 81.5vh;
     gap: 2rem;
     background-color: #F9F9F9;
-    padding: 10rem 15rem;
+    padding: 10rem 23rem;
 `
 export const Footer = styled.div`
     display: flex;
