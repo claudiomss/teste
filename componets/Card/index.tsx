@@ -1,22 +1,25 @@
-import {  ButtonBuy, CardProduct } from './styles'
+import { ButtonBuy, CardProduct } from './styles'
 import { ShoppingBagOpen } from 'phosphor-react'
 
-export function Card({id, photo, title, price, description, handleBuy}){
+export function Card({ id, photo, title, price, description, handleBuy }) {
+  const AddCart: void = () => {
+    handleBuy(id, photo, title, price, description)
+  }
 
-    const AddCart:void = () => {
-       handleBuy(id, photo, title, price, description)
-    }
-
-    return(
+  return (
     <>
-     <CardProduct>
+      <CardProduct>
         <img src={photo} width={150} alt="" />
-        <h4>{title}<span>R${price}</span></h4>
+        <h4>
+          {title}
+          <span>R${price}</span>
+        </h4>
         <p>{description}</p>
         <ButtonBuy onClick={AddCart}>
-        <ShoppingBagOpen size={24} />Comprar
+          <ShoppingBagOpen size={24} />
+          Comprar
         </ButtonBuy>
-        </CardProduct>
+      </CardProduct>
     </>
-    )
+  )
 }
