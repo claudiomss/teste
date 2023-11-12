@@ -2,35 +2,37 @@ import { CardCart } from "./Card";
 import { BtnCart, Cards, ContainerCart, TextCart, TextCartTotal } from "./styles";
 import { X } from 'phosphor-react'
 
-
-export function CartProduct({products, handleAddProduct, handleSubtractProduct,RemoveAllProducts}){
+export function CartProduct({isVisible, handleVisible, products, handleAddProduct, handleSubtractProduct,RemoveAllProducts}){
     
-    const handleAdd = (id) => {
+    const VisibleCart:void = () => {
+        handleVisible()
+    }
+
+     const handleAdd:void = (id) => {
         return handleAddProduct(id)
      }
 
-     const handleSubtract = (id) => {
+     const handleSubtract:void = (id) => {
         return handleSubtractProduct(id)
      }
     
-     const handleClose = (id) => {
+     const handleClose:void = (id) => {
         return RemoveAllProducts(id)
      }
     
      
-     function calculateTotalPrice(total, prods) {
+     function calculateTotalPrice(total, prods):number {
          return total + (prods.price * prods.amount);
     }
         
-    let total = products.reduce(calculateTotalPrice, 0);
+    let total:void = products.reduce(calculateTotalPrice, 0);
    
     return(
         <>
-        <ContainerCart>
-       
+        <ContainerCart isVisible={isVisible}>
             <TextCart>
                 Carrinho de Compras
-                <X size={40} color="#ffffff"/>
+                <X onClick={VisibleCart} size={40} color="#ffffff"/>
             </TextCart>
             <Cards>
            {products.map((prod) => {

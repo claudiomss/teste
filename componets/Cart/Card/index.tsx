@@ -5,15 +5,15 @@ import { Minus, Plus, X } from 'phosphor-react'
 export function CardCart({id, photo, price,title,amount, handleAdd, handleSubtract, handleClose}){
      
    
-    const handleAddAmount = () => {
+    const handleAddAmount:void = () => {
       handleAdd(id)
     }
 
-    const handleSubtractAmount = () => {
+    const handleSubtractAmount:void = () => {
         handleSubtract(id)
     }
 
-    const handleCloseBtn = () => {
+    const handleCloseBtn:void = () => {
         handleClose(id)
     }
     

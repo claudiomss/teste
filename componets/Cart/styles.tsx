@@ -8,6 +8,8 @@ export const ContainerCart = styled.div`
     height: 100vh;
     width: 37vw;
     padding: 5rem;
+
+    display: ${props => props.isVisible ? 'none' : 'grid'};
    `
 export const Cards = styled.div`
    margin-top: 3.3rem;
@@ -28,12 +30,14 @@ color: white;
 font-size: 3rem;
 font-weight: bold;
 
-    svg{
+
+svg{
     display: grid;
     place-items: center;
     background-color: black;
     border-radius: 999px;
     padding: 0.3rem;
+
     }
 `
 
