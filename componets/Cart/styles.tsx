@@ -39,9 +39,14 @@ export const ContainerCart = styled.div<ContainerProps>`
 `
 export const Cards = styled.div`
 /* background-color: antiquewhite; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  transform: translateY(-10rem);
   /* margin-top: 3.3rem; */
-  height: 90vh;
-  /* height: 60vh; */
+  /* height: 50vh; */
+  
+  height: 65vh;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
