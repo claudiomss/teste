@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Card } from '@/componets/Card'
-import { Cart, ContainerMain, Footer, Logo, Top } from './styles'
+import { Cart, ContainerMain, ContainerSk, Footer, Logo, Top } from './styles'
 import { ShoppingCart, ShoppingBagOpen } from 'phosphor-react'
 import { CartProduct } from '@/componets/Cart'
 import { useQuery } from 'react-query'
 import axios from 'axios'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Home(){
   interface IProducts {
@@ -70,13 +72,28 @@ export default function Home(){
     isVisible ? SetIsVisible(false) : SetIsVisible(true)
   }
 
-  if (isLoading) {
-    return <div>Esta Carregando...</div>
-  }
+if (isLoading) {
+    return (
+    <>
+      <Skeleton style={{position:'absolute'}} duration={0.5} width={2500} height={120}/> 
 
+      <Skeleton style={{position:'absolute', top:'155px', left:'6rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'155px', left:'34rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'155px', left:'62rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'155px', left:'89rem'}} duration={0.5} width={250} height={350}/> 
+
+      <Skeleton style={{position:'absolute', top:'540px', left:'6rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'540px', left:'34rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'540px', left:'62rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'540px', left:'89rem'}} duration={0.5} width={250} height={350}/> 
+
+    </>
+    )
+  
+}
   return (
     <>
-      <Top>
+        <Top>
         <Logo>
           MKS
           <span>Sistemas</span>
@@ -87,7 +104,7 @@ export default function Home(){
         </Cart>
       </Top>
       <ContainerMain>
-        {data.map((prod) => {
+      {data.map((prod) => {
           return (
             <Card
               key={prod.id}

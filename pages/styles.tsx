@@ -82,3 +82,15 @@ export const Footer = styled.div`
   font-size: 1.4rem;
   background-color: #eeeeee;
 `
+export const ContainerSk = styled.div`
+  position: absolute;
+  padding: 0 6rem;
+  top: 155px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.8rem;
+  
+`
+
+
+
