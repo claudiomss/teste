@@ -1,9 +1,21 @@
 html{
-  font-size: 67.5%;
+  /* font-size: 67.5%; */
+
+  @media screen and (min-width:320px){
+    font-size: 60%;
+  }
+
+  @media screen and (min-width:1024px){
+    font-size: 67.5%;
+  }
 }
 
 *{
   padding: 0;
   margin: 0;
   box-sizing: content-box;
+}
+
+body{
+  background-color: #f9f9f9;
 }

@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const Top = styled.div`
   display: flex;
+  width: 100vw;
+  
   justify-content: space-between;
   align-items: center;
   background-color: #0f52ba;
@@ -10,19 +12,26 @@ export const Logo = styled.div`
   display: flex;
   align-items: end;
   color: white;
-  padding: 3rem 0 3rem 6rem;
   font-size: 5rem;
 
   span {
     font-size: 2.2rem;
     padding: 1rem;
   }
+
+  @media screen and (min-width:320px){
+    padding: 1rem;
+  }
+
+  @media screen and (min-width:425px){
+    padding: 2rem;    
+  }
+
 `
 export const Cart = styled.button`
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  margin-right: 6rem;
   gap: 1rem;
   background-color: white;
   border-radius: 8px;
@@ -46,17 +55,26 @@ export const Cart = styled.button`
     transform: scale(0.96);
     background-color: #1d68d8;
   }
+
+  @media screen and (min-width:320px){
+    margin-right: 1rem;    
+  }
+
+  @media screen and (min-width:425px){
+    margin-right: 2rem;    
+  }
 `
 
 export const ContainerMain = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1300px;
   min-height: 81.5vh;
-  gap: 2rem;
-  background-color: #f9f9f9;
-  padding: 10rem 23rem;
-`
+  gap: 4rem;
+  padding: 5rem;
+ `
 export const Footer = styled.div`
   display: flex;
   justify-content: center;

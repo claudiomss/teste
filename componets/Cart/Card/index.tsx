@@ -25,7 +25,7 @@ export function CardCart({
   return (
     <>
       <BtnClose onClick={handleCloseBtn}>
-        <X size={20} color="#ffffff" />
+        <X size={15} color="#ffffff" />
       </BtnClose>
       <ContainerCard>
         <img src={photo} width={100} alt="" />
@@ -34,15 +34,16 @@ export function CardCart({
           <span>Qnt</span>
           <div>
             <button onClick={handleSubtractAmount}>
-              <Minus size={20} color="#535353" />
+              <Minus size={15} color="#535353" />
             </button>
             <p>{amount}</p>
             <button onClick={handleAddAmount}>
-              <Plus size={20} color="#535353" />
+              <Plus size={15} color="#535353" />
             </button>
           </div>
+          <h5>R${price * amount}</h5>
         </ContainerAmount>
-        <p>R${price * amount}</p>
+        {/* <p>R${price * amount}</p> */}
       </ContainerCard>
     </>
   )
