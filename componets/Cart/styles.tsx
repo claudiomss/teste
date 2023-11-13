@@ -37,8 +37,9 @@ export const ContainerCart = styled.div<ContainerProps>`
   }
 `
 export const Cards = styled.div`
+/* background-color: antiquewhite; */
   /* margin-top: 3.3rem; */
-  /* height: 70vh; */
+  height: 90vh;
   /* height: 60vh; */
   overflow-y: scroll;
 
@@ -51,11 +52,12 @@ export const Cards = styled.div`
 
 export const TextCart = styled.div`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   color: white;
   font-size: 3rem;
   font-weight: bold;
+  padding: 2rem;
   /* height: 2rem; */
   margin-bottom: 2rem;
   svg {
@@ -72,47 +74,51 @@ export const TextCart = styled.div`
 export const TextCartTotal = styled(TextCart)`
   position: absolute;
   /* bottom: 11rem; */
-  bottom: 7rem;
+  bottom: 10rem;
   padding: 2rem;
   background-color: #0f52ba;
   width: 100vw;
   
   span {
-    padding: 0 4rem;
-    /* position: absolute; */
-    /* left: rem; */
+   
+    position: absolute;
+    /* left: 73vw; */
+    right: 10%;
 
   @media screen and (min-width: 768px){
-    position: absolute;
-    left: 37vw;
+    /* position: absolute; */
+    left: 43vw;
   }
 
   @media screen and (min-width: 836px){
-    left: 33vw;
+    left: 39vw;
   }
 
   @media screen and (min-width: 1024px){
-    left: 29vw;
+    left: 35vw;
+  }
+
+  @media screen and (min-width: 1440px){
+    left: 33vw;
   }
 
   @media screen and (min-width: 2000px){
-    left: 22vw;
+    left: 24vw;
   }
 
   }
 `
 
 export const BtnCart = styled.button`
-  /* position: absolute; */
-  /* bottom: 0; */
+  position: absolute;
+  bottom: 1.5%;
   border: none;
   cursor: pointer;
-  width: calc(100% + 3rem);
-
-  /* transform: translateY(-5rem); */
+  width: calc(100%);
+  height: 7rem;
   margin-bottom: 2rem;
   /* transform: translateX(-3rem); */
-  transform: translateX(-2rem);
+  /* transform: translateX(-2rem); */
   padding: 1rem;
   background-color: black;
   color: white;

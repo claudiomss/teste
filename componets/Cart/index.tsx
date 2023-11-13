@@ -57,9 +57,9 @@ export function CartProduct({
     return total + prods.price * prods.amount
   }
 
-  // let total = products.reduce(calculateTotalPrice, 0)
+  let total = products.reduce(calculateTotalPrice, 0)
 
-  let total = products.reduce((calculateTotalPrice:any, current) =>{},[])
+  // let total = products.reduce((calculateTotalPrice:any, current) =>{},[])
 
  
   return (
