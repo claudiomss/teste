@@ -15,6 +15,7 @@ export const ContainerCart = styled.div<ContainerProps>`
    /* padding: 5rem; */
    padding: 2rem 0 2rem 2rem;
   display: ${(props) => (props.isVisible ? 'none' : 'grid')};
+  box-shadow: 1px 1px 20px #394b9c;
 
   @media screen and (min-width: 768px){
     width: 55%;
