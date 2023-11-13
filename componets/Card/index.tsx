@@ -18,7 +18,7 @@ export function Card({ id, photo, title, price, description, handleBuy }: Card )
   return (
     <>
       <CardProduct>
-        <img src={photo} width={120} alt="" />
+        <img src={photo} width={105} alt="" />
         <h4>
           {title}
           <span>R${price}</span>
