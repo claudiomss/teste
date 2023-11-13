@@ -6,7 +6,7 @@ import { CartProduct } from '@/componets/Cart'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 
-export default function Home() {
+export default function Home(){
   interface IProducts {
     id: number
     photo: string
@@ -16,7 +16,6 @@ export default function Home() {
     amount: number
   }
 
-  // const [products, setProducts] = useState<IProducts>([])
   const [products, setProducts] = useState([])
   const { data, isLoading } = useQuery('products', () => {
     return axios
