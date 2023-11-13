@@ -1,8 +1,17 @@
 import { ButtonBuy, CardProduct } from './styles'
 import { ShoppingBagOpen } from 'phosphor-react'
 
-export function Card({ id, photo, title, price, description, handleBuy }) {
-  const AddCart: void = () => {
+type Card = {
+  id: number,
+  photo: string,
+  title: string,
+  price: number,
+  description: string,
+  handleBuy: any
+}
+
+export function Card({ id, photo, title, price, description, handleBuy }: Card ) {
+  const AddCart = () => {
     handleBuy(id, photo, title, price, description)
   }
 

@@ -8,6 +8,15 @@ import {
 } from './styles'
 import { X } from 'phosphor-react'
 
+type CartProduct = {
+  isVisible:any,
+  handleVisible: any,
+  products: any
+  handleAddProduct: any,
+  handleSubtractProduct : any,
+  RemoveAllProducts: any
+}
+
 export function CartProduct({
   isVisible,
   handleVisible,
@@ -15,39 +24,43 @@ export function CartProduct({
   handleAddProduct,
   handleSubtractProduct,
   RemoveAllProducts,
-}) {
+}:CartProduct) {
 
-  interface IProducts {
+  type  Products = {
     id: number
     photo: string
     title: string
     price: number
     description: string
     amount: number
+  
   }
 
-  const VisibleCart: void = () => {
+  const VisibleCart = () => {
     handleVisible()
   }
 
-  const handleAdd: number = (id:number) => {
+  const handleAdd= (id:number) => {
     return handleAddProduct(id)
   }
 
-  const handleSubtract: number = (id:number) => {
+  const handleSubtract= (id:number) => {
     return handleSubtractProduct(id)
   }
 
-  const handleClose: number = (id:number) => {
+  const handleClose = (id:number) => {
     return RemoveAllProducts(id)
   }
 
-  function calculateTotalPrice(total:number, prods:Array<IProducts>): number {
+  function calculateTotalPrice(total:number, prods:Products): number {
     return total + prods.price * prods.amount
   }
 
-  let total: void = products.reduce(calculateTotalPrice, 0)
+  // let total = products.reduce(calculateTotalPrice, 0)
 
+  let total = products.reduce((calculateTotalPrice:any, current) =>{},[])
+
+ 
   return (
     <>
       <ContainerCart isVisible={isVisible}>
@@ -72,7 +85,6 @@ export function CartProduct({
             )
           })}
         </Cards>
-
         <TextCartTotal>
           Total:<span>R${total}</span>
         </TextCartTotal>

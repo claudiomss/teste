@@ -16,8 +16,9 @@ export default function Home() {
     amount: number
   }
 
-  const [products, setProducts] = useState<IProducts>([])
-  const { data, isLoading } = useQuery<products[]>('products', () => {
+  // const [products, setProducts] = useState<IProducts>([])
+  const [products, setProducts] = useState([])
+  const { data, isLoading } = useQuery('products', () => {
     return axios
       .get(
         'https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=35&sortBy=id&orderBy=DESC'
@@ -25,8 +26,8 @@ export default function Home() {
       .then((response) => response.data.products)
   })
 
-  const handleBuy: void = (id:number, photo:string, title:string, price:number, description:string) => {
-    const exist: boolean = products.some((pp) => pp.id === id)
+  const handleBuy = (id, photo, title, price, description) => {
+    const exist = products.some((pp) => pp.id === id)
     if (exist) {
       handleAddProduct(id)
     } else {
@@ -37,13 +38,13 @@ export default function Home() {
     }
   }
 
-  const handleAddProduct: void = (id:number) => {
+  const handleAddProduct = (id:number) => {
     const productID = products.find((pp) => pp.id === id)
     productID.amount += 1
     setProducts((prods) => [...prods])
   }
 
-  const handleSubtractProduct: void = (id:number) => {
+  const handleSubtractProduct = (id:number) => {
     const productID = products.find((pp) => pp.id === id)
     productID.amount -= 1
     if (productID.amount <= 0) {
@@ -53,20 +54,20 @@ export default function Home() {
     setProducts((prods) => [...prods])
   }
 
-  const RemoveAllProducts: void = (id:number) => {
+  const RemoveAllProducts = (id:number) => {
     const productList = products.filter((pp) => pp.id != id)
     setProducts(productList)
   }
 
-  function calculateTotalProducts(total:number, prods:Array<IProducts>): number {
+  function calculateTotalProducts(total:number, prods:IProducts): number {
     return total + prods.amount
   }
 
   let totalProducts: number = products.reduce(calculateTotalProducts, 0)
 
-  const [isVisible, SetIsVisible]: boolean = useState(true)
+  const [isVisible, SetIsVisible] = useState(true)
 
-  const handleVisible: boolean = () => {
+  const handleVisible = () => {
     isVisible ? SetIsVisible(false) : SetIsVisible(true)
   }
 
