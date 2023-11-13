@@ -81,11 +81,19 @@ if (isLoading) {
       <Skeleton style={{position:'absolute', top:'155px', left:'34rem'}} duration={0.5} width={250} height={350}/> 
       <Skeleton style={{position:'absolute', top:'155px', left:'62rem'}} duration={0.5} width={250} height={350}/> 
       <Skeleton style={{position:'absolute', top:'155px', left:'89rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'155px', left:'115rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'155px', left:'142rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'155px', left:'169rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'155px', left:'195rem'}} duration={0.5} width={250} height={350}/> 
 
       <Skeleton style={{position:'absolute', top:'540px', left:'6rem'}} duration={0.5} width={250} height={350}/> 
       <Skeleton style={{position:'absolute', top:'540px', left:'34rem'}} duration={0.5} width={250} height={350}/> 
       <Skeleton style={{position:'absolute', top:'540px', left:'62rem'}} duration={0.5} width={250} height={350}/> 
       <Skeleton style={{position:'absolute', top:'540px', left:'89rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'540px', left:'115rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'540px', left:'142rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'540px', left:'169rem'}} duration={0.5} width={250} height={350}/> 
+      <Skeleton style={{position:'absolute', top:'540px', left:'195rem'}} duration={0.5} width={250} height={350}/> 
 
     </>
     )
