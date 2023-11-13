@@ -1,6 +1,10 @@
-import styled from 'styled-components'
+import {styled} from 'styled-components'
 
-export const ContainerCart = styled.div`
+interface ContainerProps {
+  isVisible: boolean;
+}
+
+export const ContainerCart = styled.div<ContainerProps>`
   background-color: #0f52ba;
   /* position: absolute; */
   position: fixed;

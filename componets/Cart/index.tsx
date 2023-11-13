@@ -8,6 +8,7 @@ import {
 } from './styles'
 import { X } from 'phosphor-react'
 
+
 type CartProduct = {
   isVisible:any,
   handleVisible: any,
